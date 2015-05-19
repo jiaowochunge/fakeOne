@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0C7123C1B01D68B00C5379E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7123B1B01D68B00C5379E /* RatingView.swift */; };
+		B0C7123E1B01D7A300C5379E /* NBRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7123D1B01D7A300C5379E /* NBRateView.m */; };
+		B0C712411B01E38600C5379E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C712401B01E38600C5379E /* Social.framework */; };
 		B0C84F001AD66AC800E11756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84EFF1AD66AC800E11756 /* AppDelegate.swift */; };
 		B0C84F021AD66AC800E11756 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84F011AD66AC800E11756 /* FirstViewController.swift */; };
 		B0C84F041AD66AC800E11756 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84F031AD66AC800E11756 /* SecondViewController.swift */; };
@@ -14,6 +17,10 @@
 		B0C84F091AD66AC800E11756 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C84F081AD66AC800E11756 /* Images.xcassets */; };
 		B0C84F0C1AD66AC800E11756 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C84F0A1AD66AC800E11756 /* LaunchScreen.xib */; };
 		B0C84F181AD66AC800E11756 /* tabTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84F171AD66AC800E11756 /* tabTestTests.swift */; };
+		B0C873071AF0C7A3002F2DC1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C873061AF0C7A3002F2DC1 /* HomeViewController.swift */; };
+		B0C8730B1AF0C7E1002F2DC1 /* UIViewController+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C8730A1AF0C7E1002F2DC1 /* UIViewController+custom.m */; };
+		B0C873111AF0CFAF002F2DC1 /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */; };
+		B0CB6DAD1AF752D800BAAFDE /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CB6DAC1AF752D800BAAFDE /* ArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0C7123B1B01D68B00C5379E /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		B0C7123D1B01D7A300C5379E /* NBRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBRateView.m; sourceTree = "<group>"; };
+		B0C7123F1B01D7B000C5379E /* NBRateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBRateView.h; sourceTree = "<group>"; };
+		B0C712401B01E38600C5379E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B0C84EFA1AD66AC800E11756 /* tabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C84EFE1AD66AC800E11756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C84EFF1AD66AC800E11756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +49,12 @@
 		B0C84F111AD66AC800E11756 /* tabTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tabTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C84F161AD66AC800E11756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C84F171AD66AC800E11756 /* tabTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabTestTests.swift; sourceTree = "<group>"; };
+		B0C873061AF0C7A3002F2DC1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B0C873081AF0C7E1002F2DC1 /* tabTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tabTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		B0C873091AF0C7E1002F2DC1 /* UIViewController+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+custom.h"; sourceTree = "<group>"; };
+		B0C8730A1AF0C7E1002F2DC1 /* UIViewController+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+custom.m"; sourceTree = "<group>"; };
+		B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewController.swift; sourceTree = "<group>"; };
+		B0CB6DAC1AF752D800BAAFDE /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C712411B01E38600C5379E /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +79,7 @@
 		B0C84EF11AD66AC800E11756 = {
 			isa = PBXGroup;
 			children = (
+				B0C712401B01E38600C5379E /* Social.framework */,
 				B0C84EFC1AD66AC800E11756 /* tabTest */,
 				B0C84F141AD66AC800E11756 /* tabTestTests */,
 				B0C84EFB1AD66AC800E11756 /* Products */,
@@ -80,12 +99,21 @@
 			isa = PBXGroup;
 			children = (
 				B0C84EFF1AD66AC800E11756 /* AppDelegate.swift */,
+				B0C873091AF0C7E1002F2DC1 /* UIViewController+custom.h */,
+				B0C8730A1AF0C7E1002F2DC1 /* UIViewController+custom.m */,
+				B0C873061AF0C7A3002F2DC1 /* HomeViewController.swift */,
+				B0CB6DAC1AF752D800BAAFDE /* ArticleViewController.swift */,
+				B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */,
+				B0C7123B1B01D68B00C5379E /* RatingView.swift */,
+				B0C7123F1B01D7B000C5379E /* NBRateView.h */,
+				B0C7123D1B01D7A300C5379E /* NBRateView.m */,
 				B0C84F011AD66AC800E11756 /* FirstViewController.swift */,
 				B0C84F031AD66AC800E11756 /* SecondViewController.swift */,
 				B0C84F051AD66AC800E11756 /* Main.storyboard */,
 				B0C84F081AD66AC800E11756 /* Images.xcassets */,
 				B0C84F0A1AD66AC800E11756 /* LaunchScreen.xib */,
 				B0C84EFD1AD66AC800E11756 /* Supporting Files */,
+				B0C873081AF0C7E1002F2DC1 /* tabTest-Bridging-Header.h */,
 			);
 			path = tabTest;
 			sourceTree = "<group>";
@@ -216,8 +244,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C84F041AD66AC800E11756 /* SecondViewController.swift in Sources */,
+				B0C7123E1B01D7A300C5379E /* NBRateView.m in Sources */,
+				B0C873111AF0CFAF002F2DC1 /* PersonalTableViewController.swift in Sources */,
+				B0CB6DAD1AF752D800BAAFDE /* ArticleViewController.swift in Sources */,
+				B0C7123C1B01D68B00C5379E /* RatingView.swift in Sources */,
 				B0C84F001AD66AC800E11756 /* AppDelegate.swift in Sources */,
+				B0C8730B1AF0C7E1002F2DC1 /* UIViewController+custom.m in Sources */,
 				B0C84F021AD66AC800E11756 /* FirstViewController.swift in Sources */,
+				B0C873071AF0C7A3002F2DC1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +376,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = tabTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tabTest/tabTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +389,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = tabTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tabTest/tabTest-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +450,7 @@
 				B0C84F1D1AD66AC800E11756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0C84F1E1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "tabTestTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +459,7 @@
 				B0C84F201AD66AC800E11756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  tabTest
 //
-//  Created by 王益 on 15/4/9.
+//  Created by john on 15/4/9.
 //  Copyright (c) 2015年 test. All rights reserved.
 //
 
