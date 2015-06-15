@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home Collection View Controller-->
@@ -33,84 +32,32 @@
             </objects>
             <point key="canvasLocation" x="1662" y="-1188"/>
         </scene>
-        <!--Article View Controller-->
-        <scene sceneID="LPU-eN-gmF">
+        <!--Article Collection View Controller-->
+        <scene sceneID="fE8-hI-UIV">
             <objects>
-                <viewController storyboardIdentifier="ArticleViewController" id="Cyw-Ix-LME" customClass="ArticleViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qOd-ls-8i7"/>
-                        <viewControllerLayoutGuide type="bottom" id="xcK-Ww-cui"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zb1-JE-TuG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <collectionViewController storyboardIdentifier="ArticleCollectionViewController" id="jbM-uY-hWR" customClass="ArticleCollectionViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="W7B-BP-qHX">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQr-3z-L47">
-                                <rect key="frame" x="0.0" y="72" width="600" height="200"/>
-                                <color key="backgroundColor" red="0.46692094429999997" green="0.98519493260000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="lLf-Li-wHA"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwp-HA-zMb" customClass="RatingView" customModule="tabTest" customModuleProvider="target">
-                                <rect key="frame" x="67" y="322" width="162" height="34"/>
-                                <color key="backgroundColor" red="0.46692094429999997" green="0.98519493260000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="enableImage" value="first"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowEdit" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxCount">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="disableImage" value="second"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ratingViewValueChanged:" destination="Cyw-Ix-LME" eventType="valueChanged" id="XVE-wU-EOa"/>
-                                </connections>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN7-jX-HXC">
-                                <rect key="frame" x="67" y="376" width="34" height="21"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="mN7-jX-HXC" firstAttribute="top" secondItem="dwp-HA-zMb" secondAttribute="bottom" constant="20" id="99I-by-ovK"/>
-                            <constraint firstItem="dwp-HA-zMb" firstAttribute="top" secondItem="PQr-3z-L47" secondAttribute="bottom" constant="50" id="KXa-wP-ndc"/>
-                            <constraint firstItem="PQr-3z-L47" firstAttribute="leading" secondItem="zb1-JE-TuG" secondAttribute="leading" id="RMm-yR-VA5"/>
-                            <constraint firstItem="PQr-3z-L47" firstAttribute="top" secondItem="qOd-ls-8i7" secondAttribute="bottom" constant="8" id="VKV-D2-7RQ"/>
-                            <constraint firstItem="dwp-HA-zMb" firstAttribute="leading" secondItem="zb1-JE-TuG" secondAttribute="leadingMargin" constant="51" id="gi7-BV-KRX"/>
-                            <constraint firstAttribute="trailing" secondItem="PQr-3z-L47" secondAttribute="trailing" id="oFD-8c-dGt"/>
-                            <constraint firstItem="dwp-HA-zMb" firstAttribute="leading" secondItem="mN7-jX-HXC" secondAttribute="leading" id="rOV-R3-AmZ"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <navigationItem key="navigationItem" id="261-an-nUq"/>
-                    <keyCommands/>
-                    <connections>
-                        <outlet property="rateScore" destination="mN7-jX-HXC" id="cRb-SU-OFs"/>
-                        <outlet property="rateView" destination="dwp-HA-zMb" id="xGE-2e-RGa"/>
-                        <outlet property="textView" destination="PQr-3z-L47" id="BD5-LK-H5Y"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RGJ-fP-sxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e2m-gv-3Pu">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="jbM-uY-hWR" id="bGk-Xu-kkD"/>
+                            <outlet property="delegate" destination="jbM-uY-hWR" id="dCf-C2-Uvq"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="JtC-Sr-bXK"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlw-XC-MnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685" y="-406"/>
+            <point key="canvasLocation" x="1662" y="-406"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Gar-uF-wSC">
@@ -266,13 +213,14 @@
         <scene sceneID="EUB-hN-rSg">
             <objects>
                 <navigationController id="Lpo-bJ-FqH" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="文章" id="rSV-UJ-wPY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iY4-hf-QhA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Cyw-Ix-LME" kind="relationship" relationship="rootViewController" id="3jP-De-uDu"/>
+                        <segue destination="jbM-uY-hWR" kind="relationship" relationship="rootViewController" id="Z5X-b8-DIx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3d-l1-KVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,8 +267,4 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="24" height="23"/>
-    </resources>
 </document>

@@ -4,5 +4,6 @@
 
 #import "UIViewController+custom.h"
 #import "HomepageEntity.h"
+#import "ArticleEntity.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"

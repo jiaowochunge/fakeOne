@@ -9,13 +9,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="tabTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="416" height="623"/>
+            <rect key="frame" x="0.0" y="0.0" width="416" height="630"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="416" height="623"/>
+                <rect key="frame" x="0.0" y="0.0" width="416" height="630"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKO-jE-GLq">
-                        <rect key="frame" x="0.0" y="0.0" width="416" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="630"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pu-UO-tU0">
                                 <rect key="frame" x="0.0" y="0.0" width="416" height="1"/>
@@ -30,7 +30,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separateLine" translatesAutoresizingMaskIntoConstraints="NO" id="gD7-7H-1sw">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separateLine" translatesAutoresizingMaskIntoConstraints="NO" id="gD7-7H-1sw">
                                 <rect key="frame" x="10" y="37" width="396" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -130,7 +130,7 @@
                 <constraint firstAttribute="trailing" secondItem="NKO-jE-GLq" secondAttribute="trailing" id="j0J-mn-h4Y"/>
                 <constraint firstAttribute="bottom" secondItem="NKO-jE-GLq" secondAttribute="bottom" id="m1w-qC-GH9"/>
             </constraints>
-            <size key="customSize" width="416" height="623"/>
+            <size key="customSize" width="416" height="630"/>
             <connections>
                 <outlet property="dateLabel" destination="RrB-BM-NJg" id="HOK-aE-fmN"/>
                 <outlet property="dayLabel" destination="xKs-7K-1li" id="U7N-Z0-FEL"/>
@@ -142,11 +142,11 @@
                 <outlet property="workImageRatioConstraint" destination="70A-2b-lu2" id="NWe-i8-DhC"/>
                 <outlet property="workName" destination="mHe-eY-7nb" id="GC9-g5-rNM"/>
             </connections>
-            <point key="canvasLocation" x="556" y="420.5"/>
+            <point key="canvasLocation" x="556" y="424"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="home_content" width="209" height="29"/>
+        <image name="home_content" width="10" height="29"/>
         <image name="home_like" width="13" height="12"/>
         <image name="home_like_bg" width="22" height="24"/>
         <image name="home_like_hl" width="13" height="12"/>

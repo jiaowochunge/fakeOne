@@ -1,25 +1,18 @@
 //
-//  HomeCollectionViewController.swift
+//  ArticleCollectionViewController.swift
 //  tabTest
 //
-//  Created by john on 15/6/9.
+//  Created by john on 15/6/15.
 //  Copyright (c) 2015年 test. All rights reserved.
 //
 
 import UIKit
 
-class HomeCollectionViewController: UICollectionViewController {
-    
-    let homeReuseIdentifier = "HomeCell"
+class ArticleCollectionViewController: UICollectionViewController {
 
-    var collectionData = [HomepageEntity]()
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        UIViewController.customNavigationBar()
-        UIViewController.customTabbar()
-    }
+    let reuseIdentifier = "ArticleCell"
+
+    var collectionData = [ArticleEntity]()
     
     deinit {
         self.collectionView!.removeObserver(self, forKeyPath: "frame")
@@ -27,35 +20,36 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.customTabbarItems()
+
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
+
         // Register cell classes
-        self.collectionView!.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: homeReuseIdentifier)
-        
+        self.collectionView!.registerNib(UINib(nibName: "ArticleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+
         //在autolayout机制下，无法获得正确的height，height在viewdidappear中才由autolayout计算出来
         var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: self.view.bounds.size.width, height: 480)
         
         //监听frame变化，修改cell的大小
         self.collectionView!.addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
-        // Do any additional setup after loading the view.
         
+        //网络请求
         var param = Dictionary<String, AnyObject>()
         param["strDate"] = "2015-06-09"
         param["strRow"] = 1
+        param["strMS"] = 1
         
-        ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/getHp_N", parameters: param, success: { (operation, responseObject) -> Void in
+        ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/getC_N", parameters: param, success: { (operation, responseObject) -> Void in
             var retDic = responseObject as [String : AnyObject]
             if retDic["result"] != nil && retDic["result"]!.isEqual("SUCCESS") {
-                var homeData = HomepageEntity(dictionary: retDic["hpEntity"] as Dictionary, error: nil)
-                self.collectionData.append(homeData)
+                var articleData = ArticleEntity(dictionary: retDic["contentEntity"] as Dictionary, error: nil)
+                self.collectionData.append(articleData)
                 self.collectionView!.reloadData()
             } else {
                 NSLog("返回数据错误")
             }
         }) { (operation, error) -> Void in
-            NSLog("请求返回错误:%@", error)
+                NSLog("请求返回错误:%@", error)
         }
     }
     
@@ -89,17 +83,12 @@ class HomeCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.collectionData.count
+        return collectionData.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(homeReuseIdentifier, forIndexPath: indexPath) as HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as ArticleCollectionViewCell
     
         cell.fulfillData = collectionData[indexPath.item]
     
