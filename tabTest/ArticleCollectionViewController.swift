@@ -24,7 +24,7 @@ class ArticleCollectionViewController: UICollectionViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
 
         // Register cell classes
-        self.collectionView!.registerNib(UINib(nibName: "ArticleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerNib(UINib(nibName: "Article2CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         //在autolayout机制下，无法获得正确的height，height在viewdidappear中才由autolayout计算出来
         var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
@@ -88,7 +88,7 @@ class ArticleCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as ArticleCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as Article2CollectionViewCell
     
         cell.fulfillData = collectionData[indexPath.item]
     

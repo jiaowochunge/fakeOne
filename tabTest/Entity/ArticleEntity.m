@@ -45,4 +45,9 @@
     return output;
 }
 
+- (NSArray *)lineArr
+{
+    return [_strContent componentsSeparatedByString:@"<br>"];
+}
+
 @end

@@ -83,4 +83,6 @@
 
 @property (nonatomic, readonly) NSString *processedContent;
 
+@property (nonatomic, readonly) NSArray *lineArr;
+
 @end
