@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RatingView: UIControl {
+@IBDesignable class RatingView: UIControl {
     
     //有效分图片
     @IBInspectable var enableImage : UIImage!

@@ -26,7 +26,11 @@ class ArticleViewController: UIViewController {
         tmpTextView.text = "Configuration. Configure text views in Interface Builder, in the Text View section of the Attributes Inspector. A few configurations cannot be made through the Attributes Inspector, so you must make them programmatically. You can set other configurations programmatically, too, if you prefer. "
         self.view.addSubview(tmpTextView)
         
+        var imageView = TestImageView(frame: CGRect(x: 0, y: 300, width: 50, height: 50))
+        self.view.addSubview(imageView)
+        
         rateView.decimalOnly = true
+        
     }
 
     override func didReceiveMemoryWarning() {

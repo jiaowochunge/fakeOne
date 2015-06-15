@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var fruit : [AnyObject] = [
+            Apple(),
+            Apple(),
+            PineApple()
+        ]
+        
+        for object in fruit {
+            println(object.dynamicType.description())
+//            NSLog("%@", object.dynamicType.description())
+        }
+        
         return true
     }
 

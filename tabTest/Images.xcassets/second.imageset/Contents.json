@@ -2,7 +2,21 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "second.pdf"
+      "filename" : "second.pdf",
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 7,
+          "height" : 7
+        },
+        "capInsets" : {
+          "bottom" : 8,
+          "top" : 8,
+          "right" : 8,
+          "left" : 9
+        }
+      }
     }
   ],
   "info" : {
