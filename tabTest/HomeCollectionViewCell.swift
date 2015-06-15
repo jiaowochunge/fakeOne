@@ -34,7 +34,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
             weak var weakSelf : HomeCollectionViewCell! = self
             
             volumeNo.text = fulfillData.strHpTitle
-            workImage.sd_setImageWithURL(NSURL(string: fulfillData.strThumbnailUrl))
             workImage.sd_setImageWithURL(NSURL(string: fulfillData.strThumbnailUrl), completed: { (image : UIImage!, error : NSError!, type : SDImageCacheType, url : NSURL!) -> Void in
                 weakSelf.workImageRatioConstraint.constant = image.size.width / image.size.height
             })

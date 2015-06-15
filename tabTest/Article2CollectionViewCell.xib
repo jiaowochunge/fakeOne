@@ -15,7 +15,6 @@
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ldz-ZA-zEj">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="554"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="0Um-Ur-azA" userLabel="header">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="110"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,7 +54,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="Fq6-x8-HWd" firstAttribute="top" secondItem="Qwi-us-VmI" secondAttribute="bottom" constant="5" id="79l-HC-QwR"/>
                                 <constraint firstItem="UER-Bq-jXB" firstAttribute="centerY" secondItem="CsT-JS-Vg8" secondAttribute="centerY" constant="-0.5" id="8SX-0O-FBX"/>
