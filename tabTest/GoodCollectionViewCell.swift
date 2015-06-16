@@ -10,7 +10,6 @@ import UIKit
 
 class GoodCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var container : UIScrollView!
     //日期
     @IBOutlet var date : UILabel!
     //东西图片
@@ -39,8 +38,8 @@ class GoodCollectionViewCell: UICollectionViewCell {
                 if error == nil {
                     weakSelf.goodImageRatioConstraint.constant = weakSelf.goodImage.frame.size.width - image.size.height * weakSelf.goodImage.frame.size.width * weakSelf.goodImageRatioConstraint.multiplier / image.size.width;
 
-                    weakSelf.container.setNeedsUpdateConstraints()
-                    weakSelf.container.layoutIfNeeded()
+                    weakSelf.setNeedsUpdateConstraints()
+                    weakSelf.layoutIfNeeded()
                 }
             })
             goodName.text = fulfillData.strTt

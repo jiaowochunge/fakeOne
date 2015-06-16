@@ -89,7 +89,6 @@
             </constraints>
             <size key="customSize" width="298" height="386"/>
             <connections>
-                <outlet property="container" destination="0HC-Yj-K0O" id="bVX-8U-4da"/>
                 <outlet property="date" destination="eq0-xN-uvw" id="EvS-8D-SqJ"/>
                 <outlet property="goodBrief" destination="EBD-Cc-iFl" id="IO8-8b-PxF"/>
                 <outlet property="goodImage" destination="pOr-2p-ybz" id="DsL-i4-x5l"/>

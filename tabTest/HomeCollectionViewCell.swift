@@ -36,7 +36,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
             volumeNo.text = fulfillData.strHpTitle
             workImage.sd_setImageWithURL(NSURL(string: fulfillData.strThumbnailUrl), completed: { (image : UIImage!, error : NSError!, type : SDImageCacheType, url : NSURL!) -> Void in
                 if error == nil {
-                    weakSelf.workImageRatioConstraint.constant = image.size.width / image.size.height
+                    //约束计算公式 firstItem = secondItem * multiplier + constant，只有constant能修改
+                    weakSelf.workImageRatioConstraint.constant = weakSelf.workImage.frame.size.width - image.size.height * weakSelf.workImage.frame.size.width * weakSelf.workImageRatioConstraint.multiplier / image.size.width;
+
                     weakSelf.setNeedsUpdateConstraints()
                     weakSelf.layoutIfNeeded()
                 }
