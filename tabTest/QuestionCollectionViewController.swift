@@ -13,6 +13,8 @@ class QuestionCollectionViewController: UICollectionViewController {
     let reuseIdentifier = "QuestionCell"
     
     var collectionData = [QuestionEntity]()
+    
+    var page : Int = 1
 
     deinit {
         self.collectionView!.removeObserver(self, forKeyPath: "frame")
@@ -29,29 +31,14 @@ class QuestionCollectionViewController: UICollectionViewController {
         //在autolayout机制下，无法获得正确的height，height在viewdidappear中才由autolayout计算出来
         var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: self.view.bounds.size.width, height: 480)
+        layout.headerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
+        layout.footerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
         
         //监听frame变化，修改cell的大小
         self.collectionView!.addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
         
         // Do any additional setup after loading the view.
-        var param = Dictionary<String, AnyObject>()
-        param["strDate"] = Utility.dateStr()
-        param["strRow"] = 1
-        param["strUi"] = ""
-        
-        ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/getQ_N", parameters: param, success: { (operation, responseObject) -> Void in
-            var retDic = responseObject as [String : AnyObject]
-            if retDic["result"] != nil && retDic["result"]!.isEqual("SUCCESS") {
-                var questionData = QuestionEntity(dictionary: retDic["questionAdEntity"] as Dictionary, error: nil)
-                self.collectionData.append(questionData)
-                self.collectionView!.reloadData()
-            } else {
-                NSLog("返回数据错误")
-            }
-        }) { (operation, error) -> Void in
-                NSLog("请求返回错误:%@", error)
-        }
-        
+        self.requestQuestionData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +55,38 @@ class QuestionCollectionViewController: UICollectionViewController {
                 
                 var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
                 layout.itemSize = CGSize(width: frame.size.width, height: frame.size.height)
+                layout.headerReferenceSize = CGSize(width: frame.size.width, height: 0)
+                layout.footerReferenceSize = CGSize(width: frame.size.width, height: 0)
             }
+        }
+    }
+    
+    func requestQuestionData() {
+        self.showActivityIndicator()
+        
+        var param = Dictionary<String, AnyObject>()
+        param["strDate"] = Utility.dateStr()
+        param["strRow"] = page
+        param["strUi"] = ""
+        
+        ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/getQ_N", parameters: param, success: { (operation, responseObject) -> Void in
+            self.hideActivityIndicator()
+            
+            var retDic = responseObject as [String : AnyObject]
+            if retDic["result"] != nil && retDic["result"]!.isEqual("SUCCESS") {
+                ++self.page
+                var questionData = QuestionEntity(dictionary: retDic["questionAdEntity"] as Dictionary, error: nil)
+                self.collectionData.append(questionData)
+                self.collectionView!.reloadData()
+            } else {
+                NSLog("返回数据错误")
+            }
+            self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+            }) { (operation, error) -> Void in
+                self.hideActivityIndicator()
+                
+                self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+                NSLog("请求返回错误:%@", error)
         }
     }
 
@@ -85,5 +103,16 @@ class QuestionCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
+    
+    // MARK: scrollView delegate
+    
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        var page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
+        if page == self.collectionData.count + 1 {
+            self.requestQuestionData()
+        } else if page == 0 {
+            self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true)
+            self.showToast("已是最新内容")
+        }
+    }
 }
