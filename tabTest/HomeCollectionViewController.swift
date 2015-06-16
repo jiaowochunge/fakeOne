@@ -42,7 +42,7 @@ class HomeCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         
         var param = Dictionary<String, AnyObject>()
-        param["strDate"] = "2015-06-09"
+        param["strDate"] = Utility.dateStr()
         param["strRow"] = 1
         
         ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/getHp_N", parameters: param, success: { (operation, responseObject) -> Void in

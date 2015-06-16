@@ -35,7 +35,7 @@ class GoodCollectionViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
         var param = Dictionary<String, AnyObject>()
-        param["strDate"] = "2015-06-15"
+        param["strDate"] = Utility.dateStr()
         param["strRow"] = 1
         
         ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/o_f", parameters: param, success: { (operation, responseObject) -> Void in
@@ -47,7 +47,7 @@ class GoodCollectionViewController: UICollectionViewController {
             } else {
                 NSLog("返回数据错误")
             }
-            }) { (operation, error) -> Void in
+        }) { (operation, error) -> Void in
                 NSLog("请求返回错误:%@", error)
         }
     }

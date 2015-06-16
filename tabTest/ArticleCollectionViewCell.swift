@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+* 此文件废弃。这个cell由scrollview实现，正文部分是个多行label。测试发现无法满足需求，多行label最大支持489行，再多系统不予绘制。（自己测试的结果）
+* 改用tableview实现。重用提高性能
+*/
 class ArticleCollectionViewCell: UICollectionViewCell {
     //日期
     @IBOutlet var dateLabel : UILabel!

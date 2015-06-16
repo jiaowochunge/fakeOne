@@ -35,7 +35,7 @@ class ArticleCollectionViewController: UICollectionViewController {
         
         //网络请求
         var param = Dictionary<String, AnyObject>()
-        param["strDate"] = "2015-06-09"
+        param["strDate"] = Utility.dateStr()
         param["strRow"] = 1
         param["strMS"] = 1
         

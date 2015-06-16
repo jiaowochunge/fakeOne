@@ -63,8 +63,17 @@
 @property (nonatomic, strong) NSString *strQuestionMarketTime;
 
 /**
+ "（责任编辑：向可）"
  */
 @property (nonatomic, strong) NSString *sEditor;
+
+/** 格式化日期
+ */
+@property (nonatomic, readonly) NSString *strDate;
+
+/** 按<br>分割回答内容
+ */
+@property (nonatomic, readonly) NSArray *lineArr;
 
 @end
 

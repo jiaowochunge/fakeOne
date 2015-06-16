@@ -18,6 +18,9 @@
 		B00DFD1E1B2ED1E600F5ABC7 /* GoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD1C1B2ED1E600F5ABC7 /* GoodCollectionViewCell.swift */; };
 		B00DFD1F1B2ED1E600F5ABC7 /* GoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00DFD1D1B2ED1E600F5ABC7 /* GoodCollectionViewCell.xib */; };
 		B00DFD221B2ED48F00F5ABC7 /* GoodEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD211B2ED48F00F5ABC7 /* GoodEntity.m */; };
+		B0C66BBB1B2FB5B000C8421B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66BBA1B2FB5B000C8421B /* Utility.swift */; };
+		B0C66BBE1B2FB9B500C8421B /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66BBC1B2FB9B500C8421B /* QuestionCollectionViewCell.swift */; };
+		B0C66BBF1B2FB9B500C8421B /* QuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C66BBD1B2FB9B500C8421B /* QuestionCollectionViewCell.xib */; };
 		B0C7123C1B01D68B00C5379E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7123B1B01D68B00C5379E /* RatingView.swift */; };
 		B0C7123E1B01D7A300C5379E /* NBRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7123D1B01D7A300C5379E /* NBRateView.m */; };
 		B0C8369C1B2688AB006C381E /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C8369B1B2688AB006C381E /* HomeCollectionViewController.swift */; };
@@ -198,6 +201,9 @@
 		B00DFD1D1B2ED1E600F5ABC7 /* GoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		B00DFD201B2ED48F00F5ABC7 /* GoodEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodEntity.h; sourceTree = "<group>"; };
 		B00DFD211B2ED48F00F5ABC7 /* GoodEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodEntity.m; sourceTree = "<group>"; };
+		B0C66BBA1B2FB5B000C8421B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B0C66BBC1B2FB9B500C8421B /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0C66BBD1B2FB9B500C8421B /* QuestionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCollectionViewCell.xib; sourceTree = "<group>"; };
 		B0C7123B1B01D68B00C5379E /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B0C7123D1B01D7A300C5379E /* NBRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBRateView.m; sourceTree = "<group>"; };
 		B0C7123F1B01D7B000C5379E /* NBRateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBRateView.h; sourceTree = "<group>"; };
@@ -580,6 +586,7 @@
 				B0C873091AF0C7E1002F2DC1 /* UIViewController+custom.h */,
 				B0C8730A1AF0C7E1002F2DC1 /* UIViewController+custom.m */,
 				B0C838A11B26C964006C381E /* ApiClient.swift */,
+				B0C66BBA1B2FB5B000C8421B /* Utility.swift */,
 				B0C8369B1B2688AB006C381E /* HomeCollectionViewController.swift */,
 				B0C8369D1B268902006C381E /* HomeCollectionViewCell.swift */,
 				B0C8369E1B268902006C381E /* HomeCollectionViewCell.xib */,
@@ -590,6 +597,8 @@
 				B00DFD101B2EAE1C00F5ABC7 /* Article2CollectionViewCell.xib */,
 				B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */,
 				B00DFD1A1B2ED0D900F5ABC7 /* QuestionCollectionViewController.swift */,
+				B0C66BBC1B2FB9B500C8421B /* QuestionCollectionViewCell.swift */,
+				B0C66BBD1B2FB9B500C8421B /* QuestionCollectionViewCell.xib */,
 				B00DFD181B2ED0B000F5ABC7 /* GoodCollectionViewController.swift */,
 				B00DFD1C1B2ED1E600F5ABC7 /* GoodCollectionViewCell.swift */,
 				B00DFD1D1B2ED1E600F5ABC7 /* GoodCollectionViewCell.xib */,
@@ -734,6 +743,7 @@
 				B00DFD121B2EAE1C00F5ABC7 /* Article2CollectionViewCell.xib in Resources */,
 				B0C837F51B269766006C381E /* Launch_4for5.png in Resources */,
 				B0C837F61B269766006C381E /* Launch_5for4.png in Resources */,
+				B0C66BBF1B2FB9B500C8421B /* QuestionCollectionViewCell.xib in Resources */,
 				B0C838681B269766006C381E /* share_wc_iPad@2x.png in Resources */,
 				B0C838561B269766006C381E /* share_renn_iPad@2x.png in Resources */,
 				B0C838651B269766006C381E /* share_timelineH@2x.png in Resources */,
@@ -909,6 +919,7 @@
 				B0C7123E1B01D7A300C5379E /* NBRateView.m in Sources */,
 				B0C838A21B26C964006C381E /* ApiClient.swift in Sources */,
 				B0C873111AF0CFAF002F2DC1 /* PersonalTableViewController.swift in Sources */,
+				B0C66BBE1B2FB9B500C8421B /* QuestionCollectionViewCell.swift in Sources */,
 				B0CB67C61B213F53004D01AD /* waterfallLayout.swift in Sources */,
 				B00DFD221B2ED48F00F5ABC7 /* GoodEntity.m in Sources */,
 				B0C8369C1B2688AB006C381E /* HomeCollectionViewController.swift in Sources */,
@@ -921,6 +932,7 @@
 				B00DFD1E1B2ED1E600F5ABC7 /* GoodCollectionViewCell.swift in Sources */,
 				B00DFD111B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift in Sources */,
 				B0C8730B1AF0C7E1002F2DC1 /* UIViewController+custom.m in Sources */,
+				B0C66BBB1B2FB5B000C8421B /* Utility.swift in Sources */,
 				B0CFD5011B16B52400AEF18B /* SingletonTest.swift in Sources */,
 				B0C84F021AD66AC800E11756 /* FirstViewController.swift in Sources */,
 				B00DFD1B1B2ED0D900F5ABC7 /* QuestionCollectionViewController.swift in Sources */,
