@@ -10,6 +10,7 @@ import UIKit
 
 class GoodCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var container : UIScrollView!
     //日期
     @IBOutlet var date : UILabel!
     //东西图片
@@ -36,10 +37,10 @@ class GoodCollectionViewCell: UICollectionViewCell {
             date.text = fulfillData.strDate
             goodImage.sd_setImageWithURL(NSURL(string: fulfillData.strBu), completed: { (image : UIImage!, error : NSError!, type : SDImageCacheType, url : NSURL!) -> Void in
                 if error == nil {
-                    var ratio = image.size.width / image.size.height
-                    weakSelf.goodImageRatioConstraint.constant = image.size.width / image.size.height
-                    weakSelf.setNeedsLayout()
-                    weakSelf.layoutIfNeeded()
+                    weakSelf.goodImageRatioConstraint.constant = weakSelf.goodImage.frame.size.width - image.size.height * weakSelf.goodImage.frame.size.width * weakSelf.goodImageRatioConstraint.multiplier / image.size.width;
+
+                    weakSelf.container.setNeedsUpdateConstraints()
+                    weakSelf.container.layoutIfNeeded()
                 }
             })
             goodName.text = fulfillData.strTt

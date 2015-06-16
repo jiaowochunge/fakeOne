@@ -37,6 +37,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
             workImage.sd_setImageWithURL(NSURL(string: fulfillData.strThumbnailUrl), completed: { (image : UIImage!, error : NSError!, type : SDImageCacheType, url : NSURL!) -> Void in
                 if error == nil {
                     weakSelf.workImageRatioConstraint.constant = image.size.width / image.size.height
+                    weakSelf.setNeedsUpdateConstraints()
+                    weakSelf.layoutIfNeeded()
                 }
             })
             workName.text = fulfillData.strWorkName
