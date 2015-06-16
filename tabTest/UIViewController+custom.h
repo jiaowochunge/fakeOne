@@ -24,4 +24,20 @@
 
 - (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName Target:(id)target Action:(SEL)selector;
 
+/** 加个菊花
+ */
+- (void)showActivityIndicator;
+
+/** 去掉菊花
+ */
+- (void)hideActivityIndicator;
+
+/** 吐司三兄弟
+ */
+- (void)showToast:(NSString *)message;
+
+- (void)showToast:(NSString *)message duration:(NSTimeInterval)duration;
+
+- (void)showToast:(NSString *)message duration:(NSTimeInterval)duration onComplete:(void(^)(BOOL finish))complete;
+
 @end

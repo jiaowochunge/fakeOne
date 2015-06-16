@@ -21,6 +21,8 @@
 		B0C66BBB1B2FB5B000C8421B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66BBA1B2FB5B000C8421B /* Utility.swift */; };
 		B0C66BBE1B2FB9B500C8421B /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66BBC1B2FB9B500C8421B /* QuestionCollectionViewCell.swift */; };
 		B0C66BBF1B2FB9B500C8421B /* QuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C66BBD1B2FB9B500C8421B /* QuestionCollectionViewCell.xib */; };
+		B0C66BC71B2FD4A200C8421B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66BC51B2FD4A200C8421B /* WebViewController.swift */; };
+		B0C66BC81B2FD4A200C8421B /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C66BC61B2FD4A200C8421B /* WebViewController.xib */; };
 		B0C7123C1B01D68B00C5379E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7123B1B01D68B00C5379E /* RatingView.swift */; };
 		B0C7123E1B01D7A300C5379E /* NBRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7123D1B01D7A300C5379E /* NBRateView.m */; };
 		B0C8369C1B2688AB006C381E /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C8369B1B2688AB006C381E /* HomeCollectionViewController.swift */; };
@@ -204,6 +206,8 @@
 		B0C66BBA1B2FB5B000C8421B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B0C66BBC1B2FB9B500C8421B /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		B0C66BBD1B2FB9B500C8421B /* QuestionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCollectionViewCell.xib; sourceTree = "<group>"; };
+		B0C66BC51B2FD4A200C8421B /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B0C66BC61B2FD4A200C8421B /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		B0C7123B1B01D68B00C5379E /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B0C7123D1B01D7A300C5379E /* NBRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBRateView.m; sourceTree = "<group>"; };
 		B0C7123F1B01D7B000C5379E /* NBRateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBRateView.h; sourceTree = "<group>"; };
@@ -595,13 +599,15 @@
 				B00DFD071B2E7CD500F5ABC7 /* ArticleCollectionViewCell.xib */,
 				B00DFD0F1B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift */,
 				B00DFD101B2EAE1C00F5ABC7 /* Article2CollectionViewCell.xib */,
-				B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */,
 				B00DFD1A1B2ED0D900F5ABC7 /* QuestionCollectionViewController.swift */,
 				B0C66BBC1B2FB9B500C8421B /* QuestionCollectionViewCell.swift */,
 				B0C66BBD1B2FB9B500C8421B /* QuestionCollectionViewCell.xib */,
 				B00DFD181B2ED0B000F5ABC7 /* GoodCollectionViewController.swift */,
 				B00DFD1C1B2ED1E600F5ABC7 /* GoodCollectionViewCell.swift */,
 				B00DFD1D1B2ED1E600F5ABC7 /* GoodCollectionViewCell.xib */,
+				B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */,
+				B0C66BC51B2FD4A200C8421B /* WebViewController.swift */,
+				B0C66BC61B2FD4A200C8421B /* WebViewController.xib */,
 				B0C7123B1B01D68B00C5379E /* RatingView.swift */,
 				B0CD99C21B257BD2005C2C8B /* Fruit.swift */,
 				B0C7123F1B01D7B000C5379E /* NBRateView.h */,
@@ -729,6 +735,7 @@
 				B0C8389F1B269766006C381E /* wbShareBg_home.png in Resources */,
 				B0C837F21B269766006C381E /* Launch_3for4.png in Resources */,
 				B0C8384F1B269766006C381E /* share_disc@2x.png in Resources */,
+				B0C66BC81B2FD4A200C8421B /* WebViewController.xib in Resources */,
 				B0C838201B269766006C381E /* pagecontrol@2x.png in Resources */,
 				B0C837EE1B269766006C381E /* Launch_1for4.png in Resources */,
 				B0C8386F1B269766006C381E /* shareBgline.png in Resources */,
@@ -928,6 +935,7 @@
 				B0C7123C1B01D68B00C5379E /* RatingView.swift in Sources */,
 				B00DFD191B2ED0B000F5ABC7 /* GoodCollectionViewController.swift in Sources */,
 				B0C84F001AD66AC800E11756 /* AppDelegate.swift in Sources */,
+				B0C66BC71B2FD4A200C8421B /* WebViewController.swift in Sources */,
 				B00DFD0E1B2E869B00F5ABC7 /* ArticleCollectionViewController.swift in Sources */,
 				B00DFD1E1B2ED1E600F5ABC7 /* GoodCollectionViewCell.swift in Sources */,
 				B00DFD111B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift in Sources */,
