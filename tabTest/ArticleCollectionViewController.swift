@@ -24,6 +24,7 @@ class ArticleCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
+        self.addNavigationBarRightItemWithName(nil, imageName: "threeDot", highlightImageName: "threeDot_hl", target: nil, action: nil)
 
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "Article2CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)

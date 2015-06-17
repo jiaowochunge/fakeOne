@@ -32,7 +32,8 @@ class HomeCollectionViewController: UICollectionViewController {
         
         self.customTabbarItems()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
-        self .addNavigationBarRightItemWithName(nil, imageName: "threeDot", target: self, action: "rightButtonAction:")
+        self.addNavigationBarRightItemWithName(nil, imageName: "threeDot", highlightImageName: "threeDot_hl", target: self, action: "rightButtonAction:")
+        
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: homeReuseIdentifier)
         self.collectionView!.registerNib(UINib(nibName: "EmptyCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")

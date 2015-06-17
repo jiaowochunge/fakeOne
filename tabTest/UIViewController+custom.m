@@ -14,15 +14,33 @@ const NSInteger ActivityTag = 997;
 
 - (void)customTabbarItems
 {
+    NSArray *titles = @[@"首页", @"文章", @"问题", @"东西", @"😊"];
     NSArray *items = self.tabBarController.tabBar.items;
     for (NSInteger i = 1; i != 6; ++i) {
         UITabBarItem *item = [items objectAtIndex:i - 1];
+#if 0
         item.image = [[UIImage imageNamed:[NSString stringWithFormat:@"item%ld", (long)i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         item.selectedImage = [[UIImage imageNamed:[NSString stringWithFormat:@"item%ld_hl", (long)i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         item.title = nil;
         if (i == 1 || 1) {
 //            item.imageInsets = UIEdgeInsetsMake(3, 0, -10, 0);
         }
+#else
+        NSShadow *shadow = [[NSShadow alloc] init];
+        shadow.shadowColor = [UIColor whiteColor];
+        shadow.shadowOffset = CGSizeMake(0, 1);
+        item.title = titles[i - 1];
+        [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16], NSForegroundColorAttributeName:[UIColor blackColor], NSShadowAttributeName: shadow} forState:UIControlStateNormal];
+        [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16], NSForegroundColorAttributeName:[UIColor colorWithRed:49 / 255.0 green:182 / 255.0 blue:239 / 255.0 alpha:1]} forState:UIControlStateSelected];
+        [item setTitlePositionAdjustment:UIOffsetMake(0, -12)];
+        item.image = nil;
+        if (i == 2 || i == 4) {
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"selectIndicator"]];
+            CGFloat imageWidth = self.tabBarController.tabBar.frame.size.width / 5;
+            imageView.frame = CGRectMake(imageWidth * (i - 1), 0, imageWidth, 49);
+            [self.tabBarController.tabBar addSubview:imageView];
+        }
+#endif
     }
 }
 
@@ -40,7 +58,7 @@ const NSInteger ActivityTag = 997;
     [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor whiteColor]};
 }
 
-- (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName Target:(id)target Action:(SEL)selector
+- (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName HighlightImageName:(NSString *)highlightImageName Target:(id)target Action:(SEL)selector
 {
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
@@ -54,6 +72,9 @@ const NSInteger ActivityTag = 997;
             buttonWidth += image.size.width / image.size.height * 40;
         }
         [rightButton setImage:image forState:UIControlStateNormal];
+        if (highlightImageName && highlightImageName.length) {
+            [rightButton setImage:[UIImage imageNamed:highlightImageName] forState:UIControlStateHighlighted];
+        }
     }
     
     if (text && text.length) {
@@ -63,7 +84,9 @@ const NSInteger ActivityTag = 997;
     }
 
     rightButton.frame = CGRectMake(0, 0, MAX(buttonWidth, 40), 40);
-    [rightButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    if (target && selector) {
+        [rightButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    }
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
 }

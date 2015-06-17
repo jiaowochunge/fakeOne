@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            NSLog("%@", object.dynamicType.description())
         }
         
+        window?.backgroundColor = UIColor.whiteColor()
+        
         return true
     }
 

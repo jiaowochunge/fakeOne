@@ -22,7 +22,7 @@
  */
 + (void)customNavigationBar;
 
-- (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName Target:(id)target Action:(SEL)selector;
+- (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName HighlightImageName:(NSString *)highlightImageName Target:(id)target Action:(SEL)selector;
 
 /** 加个菊花
  */
