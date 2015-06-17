@@ -165,8 +165,6 @@
 		B0C838A01B269766006C381E /* wbShareLine.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C837A31B269766006C381E /* wbShareLine.png */; };
 		B0C838A21B26C964006C381E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C838A11B26C964006C381E /* ApiClient.swift */; };
 		B0C84F001AD66AC800E11756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84EFF1AD66AC800E11756 /* AppDelegate.swift */; };
-		B0C84F021AD66AC800E11756 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84F011AD66AC800E11756 /* FirstViewController.swift */; };
-		B0C84F041AD66AC800E11756 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C84F031AD66AC800E11756 /* SecondViewController.swift */; };
 		B0C84F071AD66AC800E11756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C84F051AD66AC800E11756 /* Main.storyboard */; };
 		B0C84F091AD66AC800E11756 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C84F081AD66AC800E11756 /* Images.xcassets */; };
 		B0C84F0C1AD66AC800E11756 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C84F0A1AD66AC800E11756 /* LaunchScreen.xib */; };
@@ -356,8 +354,6 @@
 		B0C84EFA1AD66AC800E11756 /* tabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C84EFE1AD66AC800E11756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C84EFF1AD66AC800E11756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0C84F011AD66AC800E11756 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		B0C84F031AD66AC800E11756 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B0C84F061AD66AC800E11756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0C84F081AD66AC800E11756 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0C84F0B1AD66AC800E11756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -409,6 +405,19 @@
 				E94CA80CC106F626E93E8519 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B0C80C691B310BB600E49B30 /* useless */ = {
+			isa = PBXGroup;
+			children = (
+				B0C7123B1B01D68B00C5379E /* RatingView.swift */,
+				B0CD99C21B257BD2005C2C8B /* Fruit.swift */,
+				B0C7123F1B01D7B000C5379E /* NBRateView.h */,
+				B0C7123D1B01D7A300C5379E /* NBRateView.m */,
+				B0CFD5001B16B52400AEF18B /* SingletonTest.swift */,
+				B0CB67C51B213F53004D01AD /* waterfallLayout.swift */,
+			);
+			name = useless;
 			sourceTree = "<group>";
 		};
 		B0C836A21B268B3D006C381E /* Entity */ = {
@@ -614,17 +623,10 @@
 				B0C873101AF0CFAF002F2DC1 /* PersonalTableViewController.swift */,
 				B0C66BC51B2FD4A200C8421B /* WebViewController.swift */,
 				B0C66BC61B2FD4A200C8421B /* WebViewController.xib */,
-				B0C7123B1B01D68B00C5379E /* RatingView.swift */,
-				B0CD99C21B257BD2005C2C8B /* Fruit.swift */,
-				B0C7123F1B01D7B000C5379E /* NBRateView.h */,
-				B0C7123D1B01D7A300C5379E /* NBRateView.m */,
-				B0CFD5001B16B52400AEF18B /* SingletonTest.swift */,
-				B0C84F011AD66AC800E11756 /* FirstViewController.swift */,
-				B0C84F031AD66AC800E11756 /* SecondViewController.swift */,
-				B0CB67C51B213F53004D01AD /* waterfallLayout.swift */,
 				B0C84F051AD66AC800E11756 /* Main.storyboard */,
 				B0C84F081AD66AC800E11756 /* Images.xcassets */,
 				B0C84F0A1AD66AC800E11756 /* LaunchScreen.xib */,
+				B0C80C691B310BB600E49B30 /* useless */,
 				B0C84EFD1AD66AC800E11756 /* Supporting Files */,
 				B0C873081AF0C7E1002F2DC1 /* tabTest-Bridging-Header.h */,
 			);
@@ -929,7 +931,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0C84F041AD66AC800E11756 /* SecondViewController.swift in Sources */,
 				B0C7123E1B01D7A300C5379E /* NBRateView.m in Sources */,
 				B0C838A21B26C964006C381E /* ApiClient.swift in Sources */,
 				B0C873111AF0CFAF002F2DC1 /* PersonalTableViewController.swift in Sources */,
@@ -950,7 +951,6 @@
 				B0C8730B1AF0C7E1002F2DC1 /* UIViewController+custom.m in Sources */,
 				B0C66BBB1B2FB5B000C8421B /* Utility.swift in Sources */,
 				B0CFD5011B16B52400AEF18B /* SingletonTest.swift in Sources */,
-				B0C84F021AD66AC800E11756 /* FirstViewController.swift in Sources */,
 				B00DFD1B1B2ED0D900F5ABC7 /* QuestionCollectionViewController.swift in Sources */,
 				B0CD99C31B257BD2005C2C8B /* Fruit.swift in Sources */,
 				B0C836A51B268B71006C381E /* HomepageEntity.m in Sources */,

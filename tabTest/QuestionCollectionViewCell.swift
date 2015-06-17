@@ -46,6 +46,8 @@ class QuestionCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UIT
             var frame = tableHeader.frame
             frame.size.height = height
             tableHeader.frame = frame
+            //这句话很重要。没有下面这句话，虽然tableHeader的大小是重置了，但tableHeader可能遮盖下面的内容
+            answerDetailTable.tableHeaderView = tableHeader;
             
             //回答内容
             var tmpArr = Array<String>()

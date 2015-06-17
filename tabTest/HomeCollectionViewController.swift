@@ -103,6 +103,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
     
     func rightButtonAction(sender : AnyObject) {
+        // TODO: 有空来实现下
         var actionSheet = UIAlertController(title: "分享到", message: "然而，并不能高度定制", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
         actionSheet.addAction(cancelAction)
@@ -133,6 +134,7 @@ class HomeCollectionViewController: UICollectionViewController {
         if page == self.collectionData.count + 1 {
             self.requestHomePageData()
         } else if page == 0 {
+            // TODO:
             self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true)
             self.showToast("已是最新内容")
         }
