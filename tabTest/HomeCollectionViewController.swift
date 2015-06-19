@@ -105,6 +105,7 @@ class HomeCollectionViewController: UICollectionViewController {
     
     func rightButtonAction(sender : AnyObject) {
         // TODO: 有空来实现下
+        return
         var actionSheet = UIAlertController(title: "分享到", message: "然而，并不能高度定制", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
         actionSheet.addAction(cancelAction)

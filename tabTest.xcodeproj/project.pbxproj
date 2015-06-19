@@ -301,13 +301,13 @@
 		B0C837A21B269766006C381E /* wbShareBg_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wbShareBg_home.png; sourceTree = "<group>"; };
 		B0C837A31B269766006C381E /* wbShareLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wbShareLine.png; sourceTree = "<group>"; };
 		B0C838A11B26C964006C381E /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		B0C84EFA1AD66AC800E11756 /* one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = one.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C84EFA1AD66AC800E11756 /* tabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C84EFE1AD66AC800E11756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C84EFF1AD66AC800E11756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C84F061AD66AC800E11756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0C84F081AD66AC800E11756 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0C84F0B1AD66AC800E11756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B0C84F111AD66AC800E11756 /* oneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C84F111AD66AC800E11756 /* tabTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tabTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C84F161AD66AC800E11756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C84F171AD66AC800E11756 /* tabTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabTestTests.swift; sourceTree = "<group>"; };
 		B0C873081AF0C7E1002F2DC1 /* tabTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tabTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -500,8 +500,8 @@
 		B0C84EFB1AD66AC800E11756 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0C84EFA1AD66AC800E11756 /* one.app */,
-				B0C84F111AD66AC800E11756 /* oneTests.xctest */,
+				B0C84EFA1AD66AC800E11756 /* tabTest.app */,
+				B0C84F111AD66AC800E11756 /* tabTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -573,9 +573,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B0C84EF91AD66AC800E11756 /* one */ = {
+		B0C84EF91AD66AC800E11756 /* tabTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0C84F1B1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "one" */;
+			buildConfigurationList = B0C84F1B1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "tabTest" */;
 			buildPhases = (
 				6089BD3DFFB12D78CA7BA595 /* Check Pods Manifest.lock */,
 				B0C84EF61AD66AC800E11756 /* Sources */,
@@ -587,14 +587,14 @@
 			);
 			dependencies = (
 			);
-			name = one;
+			name = tabTest;
 			productName = tabTest;
-			productReference = B0C84EFA1AD66AC800E11756 /* one.app */;
+			productReference = B0C84EFA1AD66AC800E11756 /* tabTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0C84F101AD66AC800E11756 /* oneTests */ = {
+		B0C84F101AD66AC800E11756 /* tabTestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0C84F1E1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "oneTests" */;
+			buildConfigurationList = B0C84F1E1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "tabTestTests" */;
 			buildPhases = (
 				B0C84F0D1AD66AC800E11756 /* Sources */,
 				B0C84F0E1AD66AC800E11756 /* Frameworks */,
@@ -605,9 +605,9 @@
 			dependencies = (
 				B0C84F131AD66AC800E11756 /* PBXTargetDependency */,
 			);
-			name = oneTests;
+			name = tabTestTests;
 			productName = tabTestTests;
-			productReference = B0C84F111AD66AC800E11756 /* oneTests.xctest */;
+			productReference = B0C84F111AD66AC800E11756 /* tabTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -628,7 +628,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0C84EF51AD66AC800E11756 /* Build configuration list for PBXProject "one" */;
+			buildConfigurationList = B0C84EF51AD66AC800E11756 /* Build configuration list for PBXProject "tabTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -641,8 +641,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0C84EF91AD66AC800E11756 /* one */,
-				B0C84F101AD66AC800E11756 /* oneTests */,
+				B0C84EF91AD66AC800E11756 /* tabTest */,
+				B0C84F101AD66AC800E11756 /* tabTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -857,7 +857,7 @@
 /* Begin PBXTargetDependency section */
 		B0C84F131AD66AC800E11756 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B0C84EF91AD66AC800E11756 /* one */;
+			target = B0C84EF91AD66AC800E11756 /* tabTest */;
 			targetProxy = B0C84F121AD66AC800E11756 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -970,7 +970,8 @@
 				INFOPLIST_FILE = tabTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = one;
+				PRODUCT_NAME = tabTest;
+				PROVISIONING_PROFILE = "ae5ba056-d85c-43d5-ba77-28b919d8daf0";
 				SWIFT_OBJC_BRIDGING_HEADER = "tabTest/tabTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -985,7 +986,8 @@
 				INFOPLIST_FILE = tabTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = one;
+				PRODUCT_NAME = tabTest;
+				PROVISIONING_PROFILE = "ae5ba056-d85c-43d5-ba77-28b919d8daf0";
 				SWIFT_OBJC_BRIDGING_HEADER = "tabTest/tabTest-Bridging-Header.h";
 			};
 			name = Release;
@@ -1004,7 +1006,7 @@
 				);
 				INFOPLIST_FILE = tabTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = oneTests;
+				PRODUCT_NAME = tabTestTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tabTest.app/tabTest";
 			};
 			name = Debug;
@@ -1019,7 +1021,7 @@
 				);
 				INFOPLIST_FILE = tabTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = oneTests;
+				PRODUCT_NAME = tabTestTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tabTest.app/tabTest";
 			};
 			name = Release;
@@ -1027,7 +1029,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0C84EF51AD66AC800E11756 /* Build configuration list for PBXProject "one" */ = {
+		B0C84EF51AD66AC800E11756 /* Build configuration list for PBXProject "tabTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C84F191AD66AC800E11756 /* Debug */,
@@ -1036,7 +1038,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0C84F1B1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "one" */ = {
+		B0C84F1B1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "tabTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C84F1C1AD66AC800E11756 /* Debug */,
@@ -1045,7 +1047,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0C84F1E1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "oneTests" */ = {
+		B0C84F1E1AD66AC800E11756 /* Build configuration list for PBXNativeTarget "tabTestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C84F1F1AD66AC800E11756 /* Debug */,
