@@ -16,6 +16,9 @@ class PersonalTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
+        
+        self.tableView.tableFooterView = UIView();
+        tableData = [["image" : "http://pic.baike.soso.com/p/20130627/20130627103947-896322375.jpg", "text" : "糗事百科指各种最最尴尬事情的总汇，那份尴尬的心情真是叫人哭笑不得", "url" : "http://www.qiushibaike.com"]]
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,10 +56,22 @@ class PersonalTableViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "settingIcon")
                 cell.textLabel?.text = "设置"
             }
+            cell.userInteractionEnabled = false
         } else if indexPath.section == 2 {
             cell = tableView.dequeueReusableCellWithIdentifier("recomend", forIndexPath: indexPath) as UITableViewCell
+            cell.userInteractionEnabled = false
         } else {
             cell = tableView.dequeueReusableCellWithIdentifier("app", forIndexPath: indexPath) as UITableViewCell
+            
+            var imageView = cell.viewWithTag(21) as UIImageView
+            var label = cell.viewWithTag(22) as UILabel
+            
+            var cellData = tableData![indexPath.row]
+            
+            if let url = NSURL(string: cellData["image"] as String) {
+                imageView.sd_setImageWithURL(url)
+            }
+            label.text = cellData["text"] as? String
         }
 
         return cell
@@ -64,6 +79,9 @@ class PersonalTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        var cellData = tableData![indexPath.row]
+        self.pushWebView(cellData["url"] as String)
     }
 
 }

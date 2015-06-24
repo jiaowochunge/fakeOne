@@ -22,6 +22,8 @@
  */
 + (void)customNavigationBar;
 
+- (void)customNavigationBackButton;
+
 - (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName HighlightImageName:(NSString *)highlightImageName Target:(id)target Action:(SEL)selector;
 
 /** 加个菊花
@@ -39,5 +41,7 @@
 - (void)showToast:(NSString *)message duration:(NSTimeInterval)duration;
 
 - (void)showToast:(NSString *)message duration:(NSTimeInterval)duration onComplete:(void(^)(BOOL finish))complete;
+
+- (void)pushWebView:(NSString *)urlStr;
 
 @end

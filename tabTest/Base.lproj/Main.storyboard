@@ -8,7 +8,7 @@
         <!--Home Collection View Controller-->
         <scene sceneID="To1-7Q-tqt">
             <objects>
-                <collectionViewController id="qDs-sZ-c5u" customClass="HomeCollectionViewController" customModule="one" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="qDs-sZ-c5u" customClass="HomeCollectionViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="5QD-qf-rDn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
         <!--Article Collection View Controller-->
         <scene sceneID="fE8-hI-UIV">
             <objects>
-                <collectionViewController storyboardIdentifier="ArticleCollectionViewController" id="jbM-uY-hWR" customClass="ArticleCollectionViewController" customModule="one" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ArticleCollectionViewController" id="jbM-uY-hWR" customClass="ArticleCollectionViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="W7B-BP-qHX">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
         <!--Question Collection View Controller-->
         <scene sceneID="kmW-Ch-KUI">
             <objects>
-                <collectionViewController storyboardIdentifier="QuestionCollectionViewController" id="5YM-iO-wep" customClass="QuestionCollectionViewController" customModule="one" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="QuestionCollectionViewController" id="5YM-iO-wep" customClass="QuestionCollectionViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="pm6-oS-IuL">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
         <!--Good Collection View Controller-->
         <scene sceneID="1XH-k4-Okd">
             <objects>
-                <collectionViewController storyboardIdentifier="GoodCollectionViewController" id="7TR-wN-lam" customClass="GoodCollectionViewController" customModule="one" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="GoodCollectionViewController" id="7TR-wN-lam" customClass="GoodCollectionViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="HG9-Fd-Ama">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,9 +133,9 @@
         <!--Root View Controller-->
         <scene sceneID="2v8-Hg-Rco">
             <objects>
-                <tableViewController storyboardIdentifier="PersonalTableViewController" id="rhi-Rc-4CX" customClass="PersonalTableViewController" customModule="one" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PersonalTableViewController" id="rhi-Rc-4CX" customClass="PersonalTableViewController" customModule="tabTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xlD-gd-uZ2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -147,7 +147,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="欢迎加入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yIL-Z7-bXo">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="loginIcon" id="yzb-w7-e5r">
@@ -165,7 +165,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐应用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xi6-ct-kL4">
                                             <rect key="frame" x="15" y="23" width="64" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -181,17 +181,17 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQP-Hk-B6q" id="rUh-m7-TUO">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q9h-LE-Pe1">
+                                        <imageView userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q9h-LE-Pe1">
                                             <rect key="frame" x="15" y="5" width="33" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="aTb-lE-3Ua"/>
                                                 <constraint firstAttribute="width" constant="33" id="adB-xt-edX"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="493" translatesAutoresizingMaskIntoConstraints="NO" id="4VA-VL-n5I">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="493" translatesAutoresizingMaskIntoConstraints="NO" id="4VA-VL-n5I">
                                             <rect key="frame" x="56" y="6" width="493" height="31"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" image="feeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Vf1-XS-dG4">
@@ -217,6 +217,7 @@
                             <outlet property="delegate" destination="rhi-Rc-4CX" id="8eH-PX-lrF"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Ua1-jr-dx8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSP-8b-InS" userLabel="First Responder" sceneMemberID="firstResponder"/>

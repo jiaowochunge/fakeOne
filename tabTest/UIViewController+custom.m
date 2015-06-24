@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+custom.h"
+#import "tabTest-Swift.h"
 
 @implementation UIViewController (custom)
 
@@ -55,7 +56,17 @@ const NSInteger ActivityTag = 997;
     [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"navigationBarBG"]]];
     [[UINavigationBar appearance] setShadowImage:[UIViewController clearImage]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBarBG"] forBarMetrics:UIBarMetricsDefault];
-    [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor whiteColor]};
+    UIColor *blue = [UIColor colorWithRed:62 / 255.0 green:189 / 255.0 blue:235 / 255.0 alpha:1];
+    [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:blue};
+}
+
+- (void)customNavigationBackButton
+{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+//    UIImage *resizeImage = [[UIImage imageNamed:@"backButton"] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+//    [backItem setBackButtonBackgroundImage:resizeImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+
+    self.navigationItem.backBarButtonItem = backItem;
 }
 
 - (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName HighlightImageName:(NSString *)highlightImageName Target:(id)target Action:(SEL)selector
@@ -181,6 +192,19 @@ const NSInteger ActivityTag = 997;
             }
         }];
     }];
+}
+
+- (void)pushWebView:(NSString *)urlStr
+{
+    if (!self.navigationController) {
+        return;
+    }
+    [self customNavigationBackButton];
+
+    WebViewController *vc = [[WebViewController alloc] initWithNibName:nil bundle:nil];
+    vc.urlString = urlStr;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

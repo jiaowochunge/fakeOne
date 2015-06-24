@@ -12,15 +12,24 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 
     var urlString : String?
     
-    @IBOutlet var webView : UIWebView!
+    private var webView : UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.edgesForExtendedLayout = UIRectEdge.None
+        webView = UIWebView(frame: self.view.bounds)
+        webView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        webView.delegate = self
+        self.view.addSubview(webView)
 
         if urlString == nil {
             self.navigationController?.popViewControllerAnimated(true)
         } else {
             webView.loadHTMLString(urlString!, baseURL: nil)
+            if let url = NSURL(string: urlString!) {
+                webView.loadRequest(NSURLRequest(URL: url))
+            }
         }
     }
 
