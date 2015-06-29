@@ -30,7 +30,7 @@ class GoodCollectionViewController: UICollectionViewController {
         self.collectionView!.registerNib(UINib(nibName: "GoodCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         //在autolayout机制下，无法获得正确的height，height在viewdidappear中才由autolayout计算出来
-        var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
+        var layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: self.view.bounds.size.width, height: 480)
         layout.headerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
         layout.footerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
@@ -54,7 +54,7 @@ class GoodCollectionViewController: UICollectionViewController {
             if let value = change["new"] as? NSValue {
                 frame = value.CGRectValue()
                 
-                var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
+                var layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
                 layout.itemSize = CGSize(width: frame.size.width, height: frame.size.height)
                 layout.headerReferenceSize = CGSize(width: frame.size.width, height: 0)
                 layout.footerReferenceSize = CGSize(width: frame.size.width, height: 0)
@@ -72,10 +72,10 @@ class GoodCollectionViewController: UICollectionViewController {
         ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/o_f", parameters: param, success: { (operation, responseObject) -> Void in
             self.hideActivityIndicator()
             
-            var retDic = responseObject as [String : AnyObject]
+            var retDic = responseObject as! [String : AnyObject]
             if retDic["rs"] != nil && retDic["rs"]!.isEqual("SUCCESS") {
                 ++self.page
-                var goodData = GoodEntity(dictionary: retDic["entTg"] as Dictionary, error: nil)
+                var goodData = GoodEntity(dictionary: retDic["entTg"] as! Dictionary, error: nil)
                 self.collectionData.append(goodData)
                 self.collectionView!.reloadData()
             } else {
@@ -97,7 +97,7 @@ class GoodCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as GoodCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! GoodCollectionViewCell
     
         cell.fulfillData = collectionData[indexPath.item]
     

@@ -48,7 +48,7 @@ class PersonalTableViewController: UITableViewController {
         var cell : UITableViewCell!
         
         if indexPath.section < 2 {
-            cell = tableView.dequeueReusableCellWithIdentifier("setting", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("setting", forIndexPath: indexPath) as! UITableViewCell
             if indexPath.section == 0 {
                 cell.imageView?.image = UIImage(named: "loginIcon")
                 cell.textLabel?.text = "欢迎加入"
@@ -58,17 +58,17 @@ class PersonalTableViewController: UITableViewController {
             }
             cell.userInteractionEnabled = false
         } else if indexPath.section == 2 {
-            cell = tableView.dequeueReusableCellWithIdentifier("recomend", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("recomend", forIndexPath: indexPath) as! UITableViewCell
             cell.userInteractionEnabled = false
         } else {
-            cell = tableView.dequeueReusableCellWithIdentifier("app", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("app", forIndexPath: indexPath) as! UITableViewCell
             
-            var imageView = cell.viewWithTag(21) as UIImageView
-            var label = cell.viewWithTag(22) as UILabel
+            var imageView = cell.viewWithTag(21) as! UIImageView
+            var label = cell.viewWithTag(22) as! UILabel
             
             var cellData = tableData![indexPath.row]
             
-            if let url = NSURL(string: cellData["image"] as String) {
+            if let url = NSURL(string: cellData["image"] as! String) {
                 imageView.sd_setImageWithURL(url)
             }
             label.text = cellData["text"] as? String
@@ -81,7 +81,7 @@ class PersonalTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         var cellData = tableData![indexPath.row]
-        self.pushWebView(cellData["url"] as String)
+        self.pushWebView(cellData["url"] as! String)
     }
 
 }

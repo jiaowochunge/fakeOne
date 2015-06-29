@@ -40,7 +40,7 @@ class HomeCollectionViewController: UICollectionViewController {
         self.collectionView!.registerNib(UINib(nibName: "EmptyCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footer")
 
         //在autolayout机制下，无法获得正确的height，height在viewdidappear中才由autolayout计算出来
-        var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
+        var layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: self.view.bounds.size.width, height: 480)
         layout.headerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
         layout.footerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
@@ -64,7 +64,7 @@ class HomeCollectionViewController: UICollectionViewController {
             if let value = change["new"] as? NSValue {
                 frame = value.CGRectValue()
                 
-                var layout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
+                var layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
                 layout.itemSize = CGSize(width: frame.size.width, height: frame.size.height)
                 layout.headerReferenceSize = CGSize(width: frame.size.width, height: 0)
                 layout.footerReferenceSize = CGSize(width: frame.size.width, height: 0)
@@ -83,10 +83,10 @@ class HomeCollectionViewController: UICollectionViewController {
         ApiClient.GET("http://bea.wufazhuce.com/OneForWeb/one/getHp_N", parameters: param, success: { (operation, responseObject) -> Void in
             self.hideActivityIndicator()
 
-            var retDic = responseObject as [String : AnyObject]
+            var retDic = responseObject as! [String : AnyObject]
             if retDic["result"] != nil && retDic["result"]!.isEqual("SUCCESS") {
                 ++self.page
-                var homeData = HomepageEntity(dictionary: retDic["hpEntity"] as Dictionary, error: nil)
+                var homeData = HomepageEntity(dictionary: retDic["hpEntity"] as! Dictionary, error: nil)
                 self.collectionData.append(homeData)
                 self.collectionView!.reloadData()
             } else if retDic["result"] != nil && retDic["result"]!.isEqual("FAIL") {
@@ -106,13 +106,13 @@ class HomeCollectionViewController: UICollectionViewController {
     func rightButtonAction(sender : AnyObject) {
         // TODO: 有空来实现下
         return
-        var actionSheet = UIAlertController(title: "分享到", message: "然而，并不能高度定制", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
-        actionSheet.addAction(cancelAction)
-        actionSheet.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
-            println("I see \(textField.text)")
-        }
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+//        var actionSheet = UIAlertController(title: "分享到", message: "然而，并不能高度定制", preferredStyle: .Alert)
+//        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+//        actionSheet.addAction(cancelAction)
+//        actionSheet.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
+//            println("I see \(textField.text)")
+//        }
+//        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
 
     // MARK: UICollectionViewDataSource
@@ -122,7 +122,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(homeReuseIdentifier, forIndexPath: indexPath) as HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(homeReuseIdentifier, forIndexPath: indexPath) as! HomeCollectionViewCell
     
         cell.fulfillData = collectionData[indexPath.item]
     

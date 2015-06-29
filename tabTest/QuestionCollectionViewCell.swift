@@ -52,7 +52,7 @@ class QuestionCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UIT
             //回答内容
             var tmpArr = Array<String>()
             for line : AnyObject in fulfillData.lineArr {
-                tmpArr.append(line as String)
+                tmpArr.append(line as! String)
             }
             tableData = tmpArr
             answerDetailTable.reloadData()

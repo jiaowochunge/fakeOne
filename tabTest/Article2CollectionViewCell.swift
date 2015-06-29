@@ -55,7 +55,7 @@ class Article2CollectionViewCell: UICollectionViewCell, UITableViewDataSource, U
             
             var tmpArr = Array<String>()
             for line : AnyObject in fulfillData.lineArr {
-                tmpArr.append(line as String)
+                tmpArr.append(line as! String)
             }
             tableData = tmpArr
             contentTable.reloadData()

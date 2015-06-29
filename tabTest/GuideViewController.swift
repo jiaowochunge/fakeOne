@@ -93,7 +93,7 @@ class GuideViewController: UIViewController, UIScrollViewDelegate {
     
     func enterApp() {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "notFirstTimeEnterApp")
-        var appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabbarController") as? UIViewController
     }
 
