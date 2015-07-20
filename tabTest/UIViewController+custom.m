@@ -208,3 +208,78 @@ const NSInteger ActivityTag = 997;
 }
 
 @end
+
+#pragma mark - UINavigationController (transition)
+
+/** iOS从7.0开始支持手势返回。此处的代码是，如果7.0以上系统，简单实现一个navigationController的代理，这个代理也只有从7.0开始有效，这个代理方法中控制是否显示tabbar。
+ *  7.0以下的系统，hook push 和 pop 方法，控制是否显示tabbar。
+ */
+@interface UINavigationController (transition)<UINavigationControllerDelegate>
+
+@end
+
+@implementation UINavigationController (transition)
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_7_0
+
++ (void)load
+{
+    // 控制 tabbar 显示
+    Method originalMethod = class_getInstanceMethod(self, @selector(pushViewController:animated:));
+    Method swizzledMethod = class_getInstanceMethod(self, @selector(cs_pushViewController:animated:));
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+    
+    Method originalMethod2 = class_getInstanceMethod(self, @selector(popViewControllerAnimated:));
+    Method swizzledMethod2 = class_getInstanceMethod(self, @selector(cs_popViewControllerAnimated:));
+    method_exchangeImplementations(originalMethod2, swizzledMethod2);
+}
+
+- (void)cs_pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // 7.0以下的机器，控制tabbar显示。
+    [viewController customNavigationBackButton];
+    viewController.hidesBottomBarWhenPushed = YES;
+    
+    UIViewController *vc = self.navigationController.viewControllers.firstObject;
+    vc.hidesBottomBarWhenPushed = NO;
+
+    [self cs_pushViewController:viewController animated:animated];
+}
+
+- (UIViewController *)cs_popViewControllerAnimated:(BOOL)animated {
+    // 7.0以下的机器，控制tabbar显示。
+    if (self.navigationController.viewControllers.count == 2) {
+        UIViewController *vc = self.navigationController.viewControllers.firstObject;
+        vc.hidesBottomBarWhenPushed = NO;
+    }
+
+    return [self cs_popViewControllerAnimated:animated];
+}
+
+#else
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.delegate = self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                   animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                fromViewController:(UIViewController *)fromVC
+                                                  toViewController:(UIViewController *)toVC
+{
+    if (operation == UINavigationControllerOperationPush) {
+        fromVC.hidesBottomBarWhenPushed = YES;
+        [toVC customNavigationBackButton];
+    } else if (operation == UINavigationControllerOperationPop) {
+        if (navigationController.viewControllers.count == 1) {
+            toVC.hidesBottomBarWhenPushed = NO;
+        }
+    }
+    return nil;
+}
+
+@end
+
+#endif
