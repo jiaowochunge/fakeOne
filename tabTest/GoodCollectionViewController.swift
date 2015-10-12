@@ -16,10 +16,6 @@ class GoodCollectionViewController: UICollectionViewController {
 
     var page : Int = 1
     
-    deinit {
-        self.collectionView!.removeObserver(self, forKeyPath: "frame")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,9 +31,6 @@ class GoodCollectionViewController: UICollectionViewController {
         layout.headerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
         layout.footerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
         
-        //监听frame变化，修改cell的大小
-        self.collectionView!.addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
-        
         // Do any additional setup after loading the view.
         self.requestGoodData()
     }
@@ -47,19 +40,14 @@ class GoodCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if keyPath == "frame" {
-            //监听collectionView.frame的变化。经过测试，此处监听bounds属性无效
-            var frame = CGRectZero
-            if let change = change, let value = change["new"] as? NSValue {
-                frame = value.CGRectValue()
-                
-                let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-                layout.itemSize = CGSize(width: frame.size.width, height: frame.size.height)
-                layout.headerReferenceSize = CGSize(width: frame.size.width, height: 0)
-                layout.footerReferenceSize = CGSize(width: frame.size.width, height: 0)
-            }
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // 修正collectionview layout
+        let frame = self.collectionView!.frame
+        let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: frame.size.width, height: frame.size.height)
+        layout.headerReferenceSize = CGSize(width: frame.size.width, height: 0)
+        layout.footerReferenceSize = CGSize(width: frame.size.width, height: 0)
     }
 
     func requestGoodData() {
