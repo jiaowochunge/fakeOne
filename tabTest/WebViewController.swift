@@ -19,7 +19,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
         self.edgesForExtendedLayout = UIRectEdge.None
         webView = UIWebView(frame: self.view.bounds)
-        webView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        webView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         webView.delegate = self
         self.view.addSubview(webView)
 

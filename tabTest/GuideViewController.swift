@@ -40,8 +40,8 @@ class GuideViewController: UIViewController, UIScrollViewDelegate {
         let guideImageName = ["Launch_1for4", "Launch_2for4", "Launch_3for4", "Launch_4for4", "Launch_5for4"]
         let imageWidth = self.view.bounds.size.width
         let imageHeight = self.view.bounds.size.height
-        for (index, imageName) in enumerate(guideImageName) {
-            var imageView = UIImageView(image: UIImage(named: imageName))
+        for (index, imageName) in guideImageName.enumerate() {
+            let imageView = UIImageView(image: UIImage(named: imageName))
             imageView.frame = CGRect(x: CGFloat(index) * imageWidth, y: 0, width: imageWidth, height: imageHeight)
             imageView.contentMode = UIViewContentMode.ScaleAspectFit
             container.addSubview(imageView)
@@ -93,8 +93,8 @@ class GuideViewController: UIViewController, UIScrollViewDelegate {
     
     func enterApp() {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "notFirstTimeEnterApp")
-        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabbarController") as? UIViewController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabbarController")
     }
 
 }

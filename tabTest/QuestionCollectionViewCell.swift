@@ -61,7 +61,7 @@ class QuestionCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UIT
     
     // MARK: tableView delegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("textCell") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("textCell")
         
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "textCell")

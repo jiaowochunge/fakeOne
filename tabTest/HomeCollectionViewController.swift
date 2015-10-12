@@ -16,7 +16,7 @@ class HomeCollectionViewController: UICollectionViewController {
     
     var page : Int = 1
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         UIViewController.customNavigationBar()
@@ -40,7 +40,7 @@ class HomeCollectionViewController: UICollectionViewController {
         self.collectionView!.registerNib(UINib(nibName: "EmptyCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footer")
 
         //在autolayout机制下，无法获得正确的height，height在viewdidappear中才由autolayout计算出来
-        var layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: self.view.bounds.size.width, height: 480)
         layout.headerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
         layout.footerReferenceSize = CGSize(width: self.view.bounds.size.width, height: 0)
@@ -57,14 +57,14 @@ class HomeCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "frame" {
             //监听collectionView.frame的变化。经过测试，此处监听bounds属性无效
             var frame = CGRectZero
-            if let value = change["new"] as? NSValue {
+            if let change = change, let value = change["new"] as? NSValue {
                 frame = value.CGRectValue()
                 
-                var layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+                let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
                 layout.itemSize = CGSize(width: frame.size.width, height: frame.size.height)
                 layout.headerReferenceSize = CGSize(width: frame.size.width, height: 0)
                 layout.footerReferenceSize = CGSize(width: frame.size.width, height: 0)
@@ -85,20 +85,30 @@ class HomeCollectionViewController: UICollectionViewController {
 
             var retDic = responseObject as! [String : AnyObject]
             if retDic["result"] != nil && retDic["result"]!.isEqual("SUCCESS") {
-                ++self.page
-                var homeData = HomepageEntity(dictionary: retDic["hpEntity"] as! Dictionary, error: nil)
-                self.collectionData.append(homeData)
-                self.collectionView!.reloadData()
+                do {
+                    ++self.page
+                    let homeData = try HomepageEntity(dictionary: retDic["hpEntity"] as! Dictionary)
+                    self.collectionData.append(homeData)
+                    self.collectionView!.reloadData()
+                } catch {
+                    NSLog("返回数据格式错误")
+                }
             } else if retDic["result"] != nil && retDic["result"]!.isEqual("FAIL") {
                 self.showToast("不提供更多资料，请上网站自己去看")
             } else {
                 NSLog("返回数据错误")
             }
-            self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+            // 修复数组越界。第一次请求失败时，数组为空，越界崩溃
+            if self.collectionData.count > 0 {
+                self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+            }
+            
             }) { (operation, error) -> Void in
                 self.hideActivityIndicator()
                 
-                self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+                if self.collectionData.count > 0 {
+                    self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+                }
                 NSLog("请求返回错误:%@", error)
         }
     }
@@ -132,7 +142,7 @@ class HomeCollectionViewController: UICollectionViewController {
     // MARK: scrollView delegate
     
     override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        var page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
         if page == self.collectionData.count + 1 {
             self.requestHomePageData()
         } else if page == 0 {

@@ -21,7 +21,7 @@ class Utility: NSObject {
     class func dateStrBackStep(step : Int) -> String {
         let date = NSDate().dateByAddingTimeInterval(Double(step * -86400))
         let calendar = NSCalendar.currentCalendar()
-        let component = calendar.components(NSCalendarUnit.CalendarUnitDay | .CalendarUnitYear | .CalendarUnitMonth, fromDate: date)
+        let component = calendar.components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: date)
         return String(format: "%d-%02d-%02d", component.year, component.month, component.day)
     }
     
