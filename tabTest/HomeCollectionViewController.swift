@@ -63,6 +63,27 @@ class HomeCollectionViewController: UICollectionViewController {
     
     //网络请求
     func requestHomePageData() {
+        // request DB cache data
+        let dateKey = Utility.dateStrBackStep(page - 1)
+        let localHomeData = DBOperation.queryRecord(TableName_one.HomePage, pk: dateKey)
+        if let localHomeData = localHomeData {
+            do {
+                ++self.page
+                let homeData = try HomepageEntity(dictionary: localHomeData)
+                self.collectionData.append(homeData)
+                self.collectionView!.reloadData()
+                
+                // 这个地方我也不知道怎么该。逻辑是，colletionview的header是个空白缓冲页，加载到数据后，不显示空白页，显示数据页。这里直接scroll貌似和reloadData的动作冲突了，异步晚些时间似乎就行了
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true)
+                })
+                return
+            } catch {
+                NSLog("数据库数据格式错误")
+            }
+        }
+
+        // make network request
         self.showActivityIndicator()
         
         var param = Dictionary<String, AnyObject>()
@@ -79,6 +100,8 @@ class HomeCollectionViewController: UICollectionViewController {
                     let homeData = try HomepageEntity(dictionary: retDic["hpEntity"] as! Dictionary)
                     self.collectionData.append(homeData)
                     self.collectionView!.reloadData()
+                    
+                    DBOperation.insertRecord(TableName_one.HomePage, pk: dateKey, record: retDic["hpEntity"] as! Dictionary)
                 } catch {
                     NSLog("返回数据格式错误")
                 }

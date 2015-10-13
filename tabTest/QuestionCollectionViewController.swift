@@ -51,6 +51,26 @@ class QuestionCollectionViewController: UICollectionViewController {
     }
     
     func requestQuestionData() {
+        // request DB cache data
+        let dateKey = Utility.dateStrBackStep(page - 1)
+        let localData = DBOperation.queryRecord(TableName_one.Question, pk: dateKey)
+        if let localData = localData {
+            do {
+                ++self.page
+                let questionData = try QuestionEntity(dictionary: localData)
+                self.collectionData.append(questionData)
+                self.collectionView!.reloadData()
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+                })
+                return
+            } catch {
+                NSLog("数据库数据格式错误")
+            }
+        }
+        
+        // make network request
         self.showActivityIndicator()
         
         var param = Dictionary<String, AnyObject>()
@@ -68,6 +88,8 @@ class QuestionCollectionViewController: UICollectionViewController {
                     let questionData = try QuestionEntity(dictionary: retDic["questionAdEntity"] as! Dictionary)
                     self.collectionData.append(questionData)
                     self.collectionView!.reloadData()
+                    
+                    DBOperation.insertRecord(TableName_one.Question, pk: dateKey, record: retDic["questionAdEntity"] as! Dictionary)
                 } catch {
                     NSLog("返回数据格式错误")
                 }

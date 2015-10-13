@@ -51,6 +51,26 @@ class ArticleCollectionViewController: UICollectionViewController {
     
     //网络请求
     func requestAticleData() {
+        // request DB cache data
+        let dateKey = Utility.dateStrBackStep(page - 1)
+        let localData = DBOperation.queryRecord(TableName_one.Artical, pk: dateKey)
+        if let localData = localData {
+            do {
+                ++self.page
+                let articleData = try ArticleEntity(dictionary: localData)
+                self.collectionData.append(articleData)
+                self.collectionView!.reloadData()
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.collectionView!.scrollToItemAtIndexPath(NSIndexPath(forItem: self.collectionData.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
+                })
+                return
+            } catch {
+                NSLog("数据库数据格式错误")
+            }
+        }
+        
+        // make network request
         self.showActivityIndicator()
         
         var param = Dictionary<String, AnyObject>()
@@ -68,6 +88,8 @@ class ArticleCollectionViewController: UICollectionViewController {
                     let articleData = try ArticleEntity(dictionary: retDic["contentEntity"] as! Dictionary)
                     self.collectionData.append(articleData)
                     self.collectionView!.reloadData()
+                    
+                    DBOperation.insertRecord(TableName_one.Artical, pk: dateKey, record: retDic["contentEntity"] as! Dictionary)
                 } catch {
                     NSLog("返回数据格式错误")
                 }

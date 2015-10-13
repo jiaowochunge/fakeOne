@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D33A5551F601149C8E8BC74 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F89E3162C72C62AA4505D4DD /* libPods.a */; };
+		525469EF1BCBAD6F00D244C2 /* DBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525469EE1BCBAD6F00D244C2 /* DBOperation.swift */; settings = {ASSET_TAGS = (); }; };
 		B00DFD0C1B2E7DC300F5ABC7 /* ArticleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD0B1B2E7DC300F5ABC7 /* ArticleEntity.m */; };
 		B00DFD0E1B2E869B00F5ABC7 /* ArticleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD0D1B2E869B00F5ABC7 /* ArticleCollectionViewController.swift */; };
 		B00DFD111B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD0F1B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift */; };
@@ -160,6 +161,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		525469EE1BCBAD6F00D244C2 /* DBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBOperation.swift; sourceTree = "<group>"; };
 		733782BE0AAF87BFF32906BE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B00DFD061B2E7CD500F5ABC7 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		B00DFD071B2E7CD500F5ABC7 /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				B0C8730A1AF0C7E1002F2DC1 /* UIViewController+custom.m */,
 				B0C838A11B26C964006C381E /* ApiClient.swift */,
 				B0C66BBA1B2FB5B000C8421B /* Utility.swift */,
+				525469EE1BCBAD6F00D244C2 /* DBOperation.swift */,
 				B0C8369B1B2688AB006C381E /* HomeCollectionViewController.swift */,
 				B0C8369D1B268902006C381E /* HomeCollectionViewCell.swift */,
 				B0C8369E1B268902006C381E /* HomeCollectionViewCell.xib */,
@@ -613,6 +616,7 @@
 		B0C84EF21AD66AC800E11756 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = test;
 				TargetAttributes = {
@@ -836,6 +840,7 @@
 				B0C66BBB1B2FB5B000C8421B /* Utility.swift in Sources */,
 				B00DFD1B1B2ED0D900F5ABC7 /* QuestionCollectionViewController.swift in Sources */,
 				B0C836A51B268B71006C381E /* HomepageEntity.m in Sources */,
+				525469EF1BCBAD6F00D244C2 /* DBOperation.swift in Sources */,
 				B00DFD0C1B2E7DC300F5ABC7 /* ArticleEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

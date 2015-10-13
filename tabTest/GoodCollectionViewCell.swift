@@ -25,7 +25,7 @@ class GoodCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         goodImage.userInteractionEnabled = true
-        var tapGesture = UITapGestureRecognizer(target: self, action: "tapGoodImage:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tapGoodImage:")
         goodImage.addGestureRecognizer(tapGesture)
     }
     
@@ -49,7 +49,7 @@ class GoodCollectionViewCell: UICollectionViewCell {
     
     //点击图片事件
     @IBAction func tapGoodImage(gesture : UIGestureRecognizer) {
-        var url = NSURL(string: fulfillData.strWu)
+        let url = NSURL(string: fulfillData.strWu)
         if url != nil {
             UIApplication.sharedApplication().openURL(url!)
         }

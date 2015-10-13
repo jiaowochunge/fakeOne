@@ -17,14 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        DBOperation.createDB()
+        
         if NSUserDefaults.standardUserDefaults().objectForKey("notFirstTimeEnterApp") == nil {
             window?.rootViewController = GuideViewController(nibName: nil, bundle: nil)
         } else {
             //这句话可能异常，swift1 没有捕获异常机制
-            let vc: AnyObject! = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabbarController")
-            if vc != nil {
-                window?.rootViewController = vc as? UIViewController
-            }
+            window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabbarController")
         }
         
         window?.backgroundColor = UIColor.whiteColor()
