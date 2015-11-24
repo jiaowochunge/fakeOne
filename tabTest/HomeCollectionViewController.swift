@@ -19,7 +19,6 @@ class HomeCollectionViewController: UICollectionViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        UIViewController.customNavigationBar()
         UIViewController.customTabbar()
     }
 

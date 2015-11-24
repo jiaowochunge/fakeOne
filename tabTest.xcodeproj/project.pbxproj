@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D33A5551F601149C8E8BC74 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F89E3162C72C62AA4505D4DD /* libPods.a */; };
-		525469EF1BCBAD6F00D244C2 /* DBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525469EE1BCBAD6F00D244C2 /* DBOperation.swift */; settings = {ASSET_TAGS = (); }; };
+		522521961C0446C5000B002E /* FONavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522521951C0446C5000B002E /* FONavigationController.swift */; };
+		525469EF1BCBAD6F00D244C2 /* DBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525469EE1BCBAD6F00D244C2 /* DBOperation.swift */; };
 		B00DFD0C1B2E7DC300F5ABC7 /* ArticleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD0B1B2E7DC300F5ABC7 /* ArticleEntity.m */; };
 		B00DFD0E1B2E869B00F5ABC7 /* ArticleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD0D1B2E869B00F5ABC7 /* ArticleCollectionViewController.swift */; };
 		B00DFD111B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DFD0F1B2EAE1C00F5ABC7 /* Article2CollectionViewCell.swift */; };
@@ -161,6 +162,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		522521951C0446C5000B002E /* FONavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FONavigationController.swift; sourceTree = "<group>"; };
 		525469EE1BCBAD6F00D244C2 /* DBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBOperation.swift; sourceTree = "<group>"; };
 		733782BE0AAF87BFF32906BE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B00DFD061B2E7CD500F5ABC7 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				B0C873091AF0C7E1002F2DC1 /* UIViewController+custom.h */,
 				B0C8730A1AF0C7E1002F2DC1 /* UIViewController+custom.m */,
 				B0C838A11B26C964006C381E /* ApiClient.swift */,
+				522521951C0446C5000B002E /* FONavigationController.swift */,
 				B0C66BBA1B2FB5B000C8421B /* Utility.swift */,
 				525469EE1BCBAD6F00D244C2 /* DBOperation.swift */,
 				B0C8369B1B2688AB006C381E /* HomeCollectionViewController.swift */,
@@ -622,6 +625,7 @@
 				TargetAttributes = {
 					B0C84EF91AD66AC800E11756 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = NBX2TZPNJ3;
 					};
 					B0C84F101AD66AC800E11756 = {
 						CreatedOnToolsVersion = 6.2;
@@ -831,6 +835,7 @@
 				B00DFD171B2ECD3200F5ABC7 /* QuestionEntity.m in Sources */,
 				B00DFD191B2ED0B000F5ABC7 /* GoodCollectionViewController.swift in Sources */,
 				B0C84F001AD66AC800E11756 /* AppDelegate.swift in Sources */,
+				522521961C0446C5000B002E /* FONavigationController.swift in Sources */,
 				B04A860D1B314504005C93B2 /* GuideViewController.swift in Sources */,
 				B0C66BC71B2FD4A200C8421B /* WebViewController.swift in Sources */,
 				B00DFD0E1B2E869B00F5ABC7 /* ArticleCollectionViewController.swift in Sources */,
@@ -968,12 +973,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tabTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.tabTest;
+				PRODUCT_BUNDLE_IDENTIFIER = test.tabTest.wy;
 				PRODUCT_NAME = tabTest;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "tabTest/tabTest-Bridging-Header.h";
@@ -987,12 +992,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tabTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.tabTest;
+				PRODUCT_BUNDLE_IDENTIFIER = test.tabTest.wy;
 				PRODUCT_NAME = tabTest;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "tabTest/tabTest-Bridging-Header.h";

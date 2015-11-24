@@ -18,13 +18,11 @@
  */
 + (void)customTabbar;
 
-/** 设置导航栏背景图
- */
-+ (void)customNavigationBar;
-
 - (void)customNavigationBackButton;
 
 - (void)addNavigationBarRightItemWithName:(NSString *)text ImageName:(NSString *)imageName HighlightImageName:(NSString *)highlightImageName Target:(id)target Action:(SEL)selector;
+
++ (UIImage *)clearImage;
 
 /** 加个菊花
  */
